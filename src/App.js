@@ -3,19 +3,15 @@ import data from "./data";
 import List from "./List";
 function App() {
   const [pepole, setPepole] = useState(data);
+  const handleClick = () => {
+    setPepole([]);
+  };
   return (
     <main>
       <section className="container">
-        {pepole}
-        <h3>0 Birthdays today</h3>
+        <h3>{pepole.length} Birthdays today</h3>
         <List pepole={pepole} />
-        <button
-          onClick={() => {
-            console.log("GGG");
-          }}
-        >
-          Clear All
-        </button>
+        <button onClick={handleClick}>Clear All</button>
       </section>
     </main>
   );
